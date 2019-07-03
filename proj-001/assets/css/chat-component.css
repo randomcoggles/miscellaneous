@@ -1,0 +1,40 @@
+
+.chat-container {
+
+}
+.chat-container .left-panel {
+    flex-basis: 360px;
+    min-height: 350px;
+    background-color: #009688;
+}
+
+
+chat-header {
+    padding: 0 16px;
+    display: flex;
+}
+
+chat-header .toolbar {
+    background-color: inherit;
+}
+chat-header .md-avatar{
+    flex: none;
+    width: 40px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    border-radius: 50%;
+    box-sizing: content-box;
+    height: 40px;
+} 
+.chat-container .right-panel { 
+    min-height: 350px;
+    background-color: whitesmoke;
+    flex: 1;
+
+}
+.chat-container .right-panel .header-thumb, .md-avatar {
+    height: 48px;
+    width: 48px;
+    padding: 0;
+}

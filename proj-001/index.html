@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en" class="">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"
+    />
+    <link
+      rel="mask-icon"
+      type=""
+      href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+      color="#111"
+    />
+    <link
+      rel="canonical"
+      href="https://codepen.io/anon/pen/OeQyVO?editors=1010"
+    />
+    <title>Codepen AngularJs Material Template</title>
+    <!--<base href="/"> WRONG!!! -->
+    <base href="." />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Angular template for Codepen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./vendor/angular-material.min.css" />
+    <link rel="stylesheet" href="./vendor/material-icons.min.css" />
+    <link rel="stylesheet" href="./assets/css/app.css" />
+    <link rel="stylesheet" href="./assets/css/chat-component.css" />
+    <style class="cp-pen-styles">
+      .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-ng-app="app">
+      <section class="main-content">
+        <ul>
+          <li>
+            <a ui-sref="login">Login</a>
+          </li>
+          <li>
+            <a ui-sref="about">About</a>
+          </li>
+          <li>
+            <a ui-sref="chat">Chat</a>
+          </li>
+        </ul>
+        <div ui-view=""></div>
+      </section>
+    </div>
+
+    <!-- <div style="text-align: center">
+      <p>
+        <a target="blank" href="https://stackblitz.com/@ItamarSerafim"
+          >See my <b>Stackblitz</b></a
+        >
+      </p>
+      <p></p>
+      <p>
+        <a target="blank" href="https://itamar-serafim-angular6.stackblitz.io/"
+          >See my <b>Angular 6</b> proj on stackblitz</a
+        >
+      </p>
+      <p>
+        <a target="blank" href="https://itamar-serafim-react.stackblitz.io/"
+          >See my <b>React</b> proj on stackblitz</a
+        >
+      </p>
+      <p>
+        <a
+          target="blank"
+          href="https://github.com/randomcoggles/LearningAngular"
+          >See this beatiful <b>Angular6</b> proj on github</a
+        >
+      </p>
+      <p>
+        <a target="blank" href="http://flashcardbuilder.herokuapp.com/"
+          >See this beatiful <b>AngularJs</b> playground</a
+        >
+      </p>
+    </div> -->
+    <script src="./vendor/angular.min.js"></script>
+    <script src="./vendor/angular-ui-router.min.js"></script>
+    <script src="./vendor/angular-resource.min.js"></script>
+    <script src="./vendor/angular-animate.min.js"></script>
+    <script src="./vendor/angular-aria.min.js"></script>
+    <script src="./vendor/angular-messages.min.js"></script>
+    <script src="./vendor/angular-material.min.js"></script>
+    <script src="./chat/chat.module.js"></script>
+    <script src="./chat/chat.service.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
+
+
+
