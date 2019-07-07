@@ -4,3 +4,14 @@
 .flex-row .align-right{
     align-items: flex-end;
 }
+
+
+.chat-room-list .lst-item-text .status-icon {
+}
+.chat-room-list .lst-item-text .read {
+    color: #03A9F4;
+    text-shadow: 3px 1px #03A9F4;
+}
+.chat-room-list .lst-item-text .sent {
+    color: grey;
+}

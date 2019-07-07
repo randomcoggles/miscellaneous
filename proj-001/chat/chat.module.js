@@ -9,13 +9,15 @@
 
     // Chat room
     app.component('chatHeader', {
-        template: `           
-        <md-toolbar layout="row" class="md-sticky toolbar">
-            <img ng-src=".{{$ctrl.chatService.user.thumbnail}}" class="md-avatar" alt="{{$ctrl.chatService.user.title}}" />
+        template: `   
+        <md-toolbar layout="row" class="md-sticky chat-header-toolbar">
             <div class="md-toolbar-tools">
-                {{$ctrl.chatService.user.title}}
+                <md-button class="md-fab header-thumb" aria-label="thumb" >
+                    <img ng-src=".{{$ctrl.chatService.user.thumbnail}}" class="md-avatar" alt="{{$ctrl.chatService.user.title}}" />
+                </md-button>                    
+                <h2 flex md-truncate>{{$ctrl.chatService.user.title}}</h2>                
             </div>
-        </md-toolbar>           
+        </md-toolbar>             
         `,
       controller: ['chatService', function(chatService) {
         this.chatService = chatService;
@@ -24,19 +26,21 @@
     });
     // Chat room
     app.component('chatRoom', {
-        template: `
+        template: `                 
         <md-toolbar layout="row" class="md-sticky">
-        
-            <section layout="row" layout-align="center center">
-                <md-button class="md-fab header-thumb" aria-label="Eat cake" >
-                    <img ng-src=".{{$ctrl.chatService.activeRoom.thumbnail}}" class="md-avatar" alt="{{$ctrl.chatService.activeRoom.title}}" />
-                </md-button>                    
-                <div>{{$ctrl.chatService.activeRoom.title}}</div>
-            </section>
-            <!-- <div class="md-toolbar-tools">
-            </div> -->
+            <div class="md-toolbar-tools">
+                    <md-button class="md-fab header-thumb" aria-label="thumb" >
+                        <img ng-src=".{{$ctrl.chatService.activeRoom.thumbnail}}" class="md-avatar" alt="{{$ctrl.chatService.activeRoom.title}}" />
+                    </md-button>                    
+                    <div>{{$ctrl.chatService.activeRoom.title}}</div>
+            </div>
         </md-toolbar>
-        <md-content>            
+        <md-content class="chat-room-content">   
+            <ul ng-if="$ctrl.chatService.activeRoom" class="conversations">
+                <li ng-repeat="conversation in $ctrl.chatService.activeRoom.conversations" class="conv-line">
+                    <div class="conv-wrap" ng-class="conversation.who">{{conversation.text}}</div>
+                </li>
+            </ul>         
             
         </md-content>
         <footer>
@@ -53,15 +57,21 @@
 //  Chat room list
     app.component('chatRoomList', {
         template: `
-        <md-content>
+        <md-content class="chat-room-list">
             <md-list flex>
                 <md-list-item ng-repeat="room in $ctrl.rooms" ng-click="$ctrl.chatService.setActiveRoom($index)" class="md-3-line" ui-sref="chat.room({id: room.id})">
-                <img ng-src=".{{room.thumbnail}}" class="md-avatar" alt="{{room.title}}" />
-                <div class="md-list-item-text" layout="column">
-                    <h3>{{ room.title }}</h3>
-                    <!-- <h4>{{ room.what }}</h4> -->
-                    <p><a ui-sref="chat.room({id: room.id})">{{ room.lastText }} </a></p>
-                </div>
+                    <img ng-src=".{{room.thumbnail}}" class="md-avatar" alt="{{room.title}}" />
+                    <div class="md-list-item-text" layout="column">
+                        <h3>{{ room.title }}</h3>
+                        <p class="lst-item-text">
+                            <span  ng-class="room.readStatus" class="status-icon">
+                                <span ng-if="room.readStatus === 'sent'">&#x2714;</span>
+                                <span ng-if="room.readStatus === 'receaved'">&#x2714;</span>
+                                <span ng-if="room.readStatus === 'read'">&#x2714;</span>
+                            </span>
+                            {{ room.lastText }} 
+                        </p>
+                    </div>
                 </md-list-item>
                 <md-divider ></md-divider>
             </md-list>
@@ -87,14 +97,15 @@
                     <div class="right-panel">
                         
                     <chat-room></chat-room>
-                        <!--
+                    <!--
                         <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
                             <md-button>{{title1}}</md-button>
                             <md-button md-no-ink class="md-primary">Primary (md-noink)</md-button>
                             <md-button ng-disabled="true" class="md-primary">Disabled</md-button>
                             <md-button class="md-warn">{{title4}}</md-button>
                             <div class="label">Flat</div>
-                        </section>-->
+                        </section>
+                        -->
                     </div>
                 </div>
         `,

@@ -11,13 +11,15 @@ angular.module("chat").factory("chatService", function() {
       thumbnail: '/assets/images/pp(19).png',
       lastText: "Confira este Meetup com Clube Poliglota São Paulo ",
       lastTextWho: 'me',
+      readStatus: '',
     },
     {
       id: 1,
       title: "Taty Rocha",
       thumbnail: '/assets/images/pp(1).png',
       lastText: "Vem cá. To te convidando pra festinha da melancia :)",
-      lastTextWho: "him"
+      lastTextWho: "him",
+      readStatus: 'read'
     },
     {
       id: 2,
@@ -26,6 +28,7 @@ angular.module("chat").factory("chatService", function() {
       who: "José Serafim",
       lastText: "Vai na internet.  Vai economizar  uns 200 a 300 contos",
       lastTextWho: 'me',
+      readStatus: 'sent',
       
     },
     {
@@ -34,6 +37,7 @@ angular.module("chat").factory("chatService", function() {
       thumbnail: '/assets/images/pp(21).png',
       lastText: "Missed video call",
       lastTextWho: "sys",
+      readStatus: 'read',
 
     }
   ];
@@ -45,43 +49,53 @@ angular.module("chat").factory("chatService", function() {
     },
     {
        "date": "2019-02-03T17:11:00.000Z",
-       "who": "him Polyglot Meetings: I believe that it's near paulista Avenue"
+       "who": "him",
+       text: "I believe that it's near paulista Avenue"
     },
     {
        "date": "2019-02-03T17:11:00.000Z",
-       "who": "him Polyglot Meetings: Two blocks from there"
+       "who": "him",
+       text: "Two blocks from there"
     },
     {
        "date": "2019-02-03T17:11:00.000Z",
-       "who": "him Polyglot Meetings: At Pamplona Street and between Santos and Jau streets"
+       "who": "him",
+       text: "At Pamplona Street and between Santos and Jau streets"
     },
     {
        "date": "2019-02-03T17:12:00.000Z",
-       "who": "me: Ok,"
+       "who": "me",
+       text: "Ok,"
     },
     {
        "date": "2019-02-03T17:12:00.000Z",
-       "who": "me: But I think I'll leave it for another day😞"
+       "who": "me",
+       text: "But I think I'll leave it for another day😞"
     },
     {
        "date": "2019-02-03T17:13:00.000Z",
-       "who": "me: Anyway thank you, sir and good luck"
+       "who": "me",
+       text: "Anyway thank you, sir and good luck"
     },
     {
        "date": null,
-       "who": "him Polyglot Meetings: 👍🏽"
+       "who": "him",
+       text: "👍🏽"
     },
     {
        "date": "2019-08-06T21:36:00.000Z",
-       "who": "me: Hey, sir. Are you in the meeting?"
+       "who": "me",
+       text: "Hey, sir. Are you in the meeting?"
     },
     {
        "date": "2019-08-07T00:37:00.000Z",
-       "who": "him Polyglot Meetings: Hi, Itamar. No, I didn't go to the meetings today."
+       "who": "him",
+       text: "Hi, Itamar. No, I didn't go to the meetings today."
     },
     {
        "date": "2019-08-07T00:37:00.000Z",
-       "who": "me Polyglot Meetings: I am at home now."
+       "who": "me",
+       text: "I am at home now."
     }
  ];
 
@@ -92,6 +106,7 @@ angular.module("chat").factory("chatService", function() {
       thumbnail: '/assets/images/pp(19).png',
       lastText: "Confira este Meetup com Clube Poliglota São Paulo ",
       lastTextWho: 'me',
+      readStatus: '',
       conversations: mockConversations
     },
     {
@@ -100,6 +115,7 @@ angular.module("chat").factory("chatService", function() {
       thumbnail: '/assets/images/pp(1).png',
       lastText: "Vem cá. To te convidando pra festinha da melancia :)",
       lastTextWho: "him",
+      readStatus: 'read',
       conversations: mockConversations
     },
     {
@@ -109,6 +125,7 @@ angular.module("chat").factory("chatService", function() {
       who: "José Serafim",
       lastText: "Vai na internet.  Vai economizar  uns 200 a 300 contos",
       lastTextWho: 'me',
+      readStatus: 'sent',
       conversations: mockConversations
       
     },
@@ -118,6 +135,17 @@ angular.module("chat").factory("chatService", function() {
       thumbnail: '/assets/images/pp(21).png',
       lastText: "Missed video call",
       lastTextWho: "sys",
+      readStatus: 'read',
+      conversations: mockConversations
+
+    },
+    {
+      id: 3,
+      title: "Rute Serafim",
+      thumbnail: '/assets/images/pp(21).png',
+      lastText: "Me deu água na boca 😋😊🍕‬",
+      lastTextWho: "sys",
+      readStatus: 'read',
       conversations: mockConversations
 
     }

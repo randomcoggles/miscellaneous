@@ -7,34 +7,95 @@
     min-height: 350px;
     background-color: #009688;
 }
-
-
-chat-header {
-    padding: 0 16px;
-    display: flex;
-}
-
-chat-header .toolbar {
+.chat-container md-toolbar {
     background-color: inherit;
 }
-chat-header .md-avatar{
-    flex: none;
-    width: 40px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-right: 16px;
-    border-radius: 50%;
-    box-sizing: content-box;
-    height: 40px;
+
+
+chat-header .chat-header-toolbar.md-toolbar{
+    background-color: inherit;
+}
+
+chat-header .md-toolbar {
+    background-color: tomato!important;
+}
+chat-header .md-button.md-fab.header-thumb, chat-header .md-avatar {
+    height: 48px;
+    width: 48px;
+    padding: 0;
 } 
+chat-header .md-toolbar-tools {
+    height: 60px;
+    max-height: 60px;
+}
 .chat-container .right-panel { 
     min-height: 350px;
     background-color: whitesmoke;
     flex: 1;
 
 }
-.chat-container .right-panel .header-thumb, .md-avatar {
+.chat-container .right-panel .header-thumb, .chat-container .right-panel .md-avatar {
     height: 48px;
     width: 48px;
     padding: 0;
+}
+.chat-container, .chat-room-content {
+    background-color: #009688;
+}
+chat-room {
+    background-color: tomato;
+    
+}
+
+/* Chatroom: */
+.conversations {
+    clear: both;
+    padding: 0;
+}
+.conv-line {
+    margin: 10px;
+    list-style: none;
+    clear: both;
+}
+.conv-wrap {
+    padding: 10px;
+    float: left;
+    clear: both;
+    margin: 10px;
+    background-color: #fff;
+    min-width: 100px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px;
+}
+.conv-wrap.me {
+    float: right;
+    text-align: right;
+    background-color: #c7eafb;
+}
+.conv-wrap.me::after {
+    position: relative;
+    display: block;
+    height: 0px;
+    width: 0px;
+    content: ' ';
+    float: right;
+    right: -19px;
+    top: -10px;
+    border-left: solid 10px #c7eafb;
+    border-top: solid 10px #c7eafb;
+    border-bottom: solid 10px transparent;
+    border-right: solid 10px transparent;
+}
+.conv-wrap:not(.me):before {
+    position: relative;
+    display: block;
+    height: 0px;
+    width: 0px;
+    content: ' ';
+    left: -20px;
+    top: -10px;
+    border-left: solid 10px transparent;
+    border-bottom: solid 10px transparent;
+    border-right: solid 10px #fff;
+    border-top: solid 10px #fff;
 }
