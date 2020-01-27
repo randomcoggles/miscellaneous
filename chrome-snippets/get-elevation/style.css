@@ -1,0 +1,31 @@
+#main-canva {
+	user-select: none;
+}
+.pen-header{
+  text-align: center;
+}
+.draggable {
+  cursor: move;
+}
+.degLabel{
+  font-size: 7px;
+  user-select: none;
+} 
+#drag-handle{
+  animation: pulse 1.5s ;
+  animation-iteration-count: 18;
+}
+$color: blue;
+@keyframes pulse {/*lighten($color,15%)*/
+  0% {
+    stroke: $color;
+  }
+  
+  35% {
+    stroke: lighten($color, 50%);
+  }
+  
+  100% {
+    stroke: lighten($color, 90%);   
+  }
+}

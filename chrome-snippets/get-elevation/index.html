@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="scripts.js"></script>
+	</head>
+	<body>
+
+		<header class="pen-header">
+		  <h3 class="pen-title">Get elevation</h3>
+		  <p>
+		  <label> Enter radius: <input id="radius" type="number" max="200" min="10" value="200" onchange="GetElevation.changeRadius(this)"/> </label></p>
+		  <p>
+		  <label> Enter distance in curvature: <input id="radius" type="number" max="314.1592653589793" min="0"  onchange="GetElevation.changeDistance(this)"/> </label></p>
+		  <p>
+		  <label> Enter degrees: <input id="radius" type="number" max="90" min="0" value="45"  onchange="GetElevation.changeDegrees(this)"/> </label></p>
+
+		</header>
+		<div id="svg-wrap">
+			<svg height="510" width="510" style="" id="main-canva">
+				<circle cx="300" cy="300" r="200" stroke="blue" stroke-width="2" fill="transparent"></circle>
+				<line id="main-vline" x1="300" y1="100" x2="300" y2="500" stroke="blue" stroke-width="1"></line>
+				<line id="main-hline" x1="100" y1="300" x2="500" y2="300" stroke="blue" stroke-width="1"></line>
+
+			  <g transform="translate(100, 100)" id="points-group">
+			  </g>
+			  <g transform="translate(300, 300)" id="translated-group">
+			  
+				<line id="cord-001" x1="0" y1="-200" x2="141.4213562373095" y2="-141.4213562373095" stroke="violet" 
+					  stroke-width=".5" stroke-dasharray="2,1,2"></line>
+				<line id="elevation" x1="0" y1="-200" x2="141.4213562373095" y2="-141.4213562373095" stroke="violet" 
+					  stroke-width=".5" stroke-dasharray="0"></line>
+					  
+				<line id="cta-001" x1="0" y1="-141.4213562373095" x2="141.4213562373095" y2="-141.4213562373095" stroke="blue" 
+					  stroke-width=".5" stroke-dasharray="4,1,4"></line>
+				<line id="ctb-001" x1="141.4213562373095" y1="0" x2="141.4213562373095" y2="-141.4213562373095" stroke="blue" 
+					  stroke-width=".5" stroke-dasharray="4,1,4"></line>					  
+				
+				<circle cx="0" cy="0" r="5" stroke="blue" stroke-width="1" 
+						 fill="#fff" class="draggable" ></circle>
+
+				<line x1="0" y1="0" x2="152.02795795510772" y2="-152.02795795510772" stroke="blue" 
+					  stroke-width="1" id="line-test011" stroke-dasharray="4,1,1,4"></line>
+				<circle id="drag-handle" cx="162.02795795510772" cy="-162.02795795510772" r="5" stroke="blue" 
+						stroke-width="1" ondrag="dragCircle(event)" line="{x1:200, y1:200, x2: 280, y2: 20}" 
+						connectto="line-test011" fill="green" class="draggable" ></circle>
+				<circle id="dot-over-circunf" cx="141.4213562373095" cy="-141.4213562373095"
+						r="3" stroke="blue" stroke-width="1" fill="transparent" class="draggable"></circle>
+			  </g>
+			  
+			   
+			</svg>
+			<hr>
+		</div>
+		<!--
+		<iframe src="https://stackblitz.com/edit/itamar-serafim-reactive-form?ctl=1&embed=1&file=src/app/app.routes.ts" width="650px" height="700px;" frameborder="0"></iframe>
+
+		<iframe src="https://itamar-serafim-reactive-form.stackblitz.io" width="650px" height="700px;" frameborder="0"></iframe>
+
+		-->
+
+	</body>
+</html>
