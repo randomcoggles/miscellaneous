@@ -14,3 +14,9 @@ testArray(
 
 //  ([^\.]*[^@]+[^\.])(@[^@]+)\.([^@\.])
 //  /([^\.]*[^@]+[^\.])(@[^@]+)[^\.\\'"]\.([^@\.])/.test('test@email.com')
+// Array of strings to CAML case
+['eds-input-field', 'eds-footer', 'eds-avatar', 'eds-menu-item', 'eds-icon', 'eds-button', 'eds-personal-menu', 'eds-avatar', 'eds-primary-header', 'eds-secondary-header' , 'eds-card', 'eds-badge', 'eds-popover', 'eds-breadcrumbs', 'eds-tag', 'eds-modal'] .map(name => {
+    return name.split('-').map(str => {
+    return (str[0].toUpperCase() + str.substr(1))
+}).join('')
+}).join(',\n')
