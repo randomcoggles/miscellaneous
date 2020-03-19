@@ -33,3 +33,6 @@ var testArray = [
 // 123456789 passed:  123456789
 // 123as passed:  123
 // -123 passed:  -123
+
+// Front-end challenges
+// https://github.com/felipefialho/frontend-challenges
