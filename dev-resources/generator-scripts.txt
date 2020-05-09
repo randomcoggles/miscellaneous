@@ -1,0 +1,25 @@
+// https://www.json-generator.com/
+// ===================  Generate data =================
+[
+  '{{repeat(5, 50)}}',
+  {
+    cpfCnpj:  '{{integer(20000000000, 99999999999)}}',
+    razaoSocial: '{{firstName()}} {{surname()}}',
+    cep: '55435000',
+    address: '{{integer(100, 999)}} {{street()}}',
+    numero: '{{integer(100, 10000)}}',
+    complemento: '{{lorem(10, "words")}}',
+    bairro: '{{street()}}',
+    cidade: '{{city()}}',
+    estado: '{{state()}}',
+    email: '{{email()}}',
+    telefone: '{{integer(11, 14)}} {{phone()}}',
+    celular: '{{integer(11, 14)}} {{phone()}}',
+    dataVencimento: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    valorDivida: '{{floating(1000, 4000, 2)}}',
+    natureza: '{{random("Branca", "Vermelha", "Amarela", "Verde")}}',
+    descricaoDivida: '{{lorem(10, "words")}}',    
+    numeroConstrato: '{{integer(20000, 100000)}}'
+  }
+]
+
