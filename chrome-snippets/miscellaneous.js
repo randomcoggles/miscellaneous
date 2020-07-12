@@ -20,3 +20,7 @@ testArray(
     return (str[0].toUpperCase() + str.substr(1))
 }).join('')
 }).join(',\n')
+
+// Get max value in an array:
+[13,2,3,4,5,6,7,8,9].reduce((a, b) => { return a > b ? a : b }, 0);
+// 13
