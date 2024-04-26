@@ -1,4 +1,5 @@
-const SVGEditor = (function(){  
+const SVGEditor = (function(){
+  console.log('Hello from SVGEditor: ');
   var commandsMatrix = {
     m(value) {
       const [x, y] = value;
