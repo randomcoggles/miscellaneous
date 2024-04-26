@@ -213,3 +213,4 @@ const SVGEditor = (function(){
       </>;
   };
 })();
+self.SVGEditor = self.SVGEditor || SVGEditor;
